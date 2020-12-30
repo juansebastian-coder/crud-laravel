@@ -1,0 +1,21 @@
+
+
+--  html
+ <b-form-file
+                v-model="selected_promotion.image"
+                @change="setUrl"
+                :disabled="isDisabled"
+                placeholder
+                size="lg"
+                accept="image/jpeg, image/png, image/gif"
+              ></b-form-file>
+
+
+ --- jacascript
+
+   setUrl(e) {
+      const file = e.target.files[0];
+      this.selected_promotion.image2 = file;
+      this.selected_promotion.image = URL.createObjectURL(file);
+    },
+
